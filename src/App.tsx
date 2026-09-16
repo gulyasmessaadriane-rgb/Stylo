@@ -11,10 +11,12 @@ import Calendar from '@screens/Calendar';
 import Tracker from '@screens/Tracker';
 import Deals from '@screens/Deals';
 import Store from '@screens/Store';
+import Weather from '@screens/Weather';
 
 const App: React.FC = () => {
   const navItems = [
     { label: '🏠 Home', path: '/' },
+    { label: '🌤️ Weather', path: '/weather' },
     { label: '🧥 Closet', path: '/closet' },
     { label: '✨ Stylist', path: '/stylist' },
     { label: '🎭 Avatar', path: '/avatar' },
@@ -29,7 +31,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div style={{ display: 'flex', height: '100vh', fontFamily: theme.typography.fontFamily.primary }}>
-        {/* Sidebar Navigation */}
         <nav
           style={{
             width: '250px',
@@ -83,7 +84,6 @@ const App: React.FC = () => {
           ))}
         </nav>
 
-        {/* Main Content */}
         <div
           style={{
             flex: 1,
@@ -93,6 +93,7 @@ const App: React.FC = () => {
         >
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/weather" element={<Weather />} />
             <Route path="/closet" element={<Closet />} />
             <Route path="/stylist" element={<Stylist />} />
             <Route path="/avatar" element={<Avatar />} />
